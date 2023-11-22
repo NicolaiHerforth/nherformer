@@ -1,0 +1,32 @@
+**/__pycache__/*
+.pyre
+.pytest_cache
+.coverage*
+htmlcov
+
+*.bin
+*.csv
+*.mp4
+*.png
+*.jpg
+
+.DS_Store
+
+.venv
+.mypy_cache
+
+# env vars
+.env
+.env*
+
+# wandb
+wandb/
+
+# hydra
+outputs/
+multirun/
+
+
+# data files
+*.csv
+
