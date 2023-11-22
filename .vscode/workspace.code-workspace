@@ -1,0 +1,43 @@
+{
+  "folders": [
+    {
+      "path": "../",
+    },
+    
+  ],
+  "settings": {
+    "python.analysis.extraPaths": [
+      "./"
+    ],
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.formatting.provider": "none",
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/*/**": true,
+      "**/.hg/store/**": true,
+      "**/.venv/**": true
+    },
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter"
+    }
+  }
+  // The below single launch config unfortunately does not work
+  // because ${relativeFileDirname} NEEDS a specific workspace root
+  // (see https://github.com/microsoft/vscode/issues/96570)
+  // so we need to define them for each project :/
+  // "launch": {
+  //   "configurations": [
+  //     {
+  //       "name": "Python module website_identifier_2",
+  //       "type": "python",
+  //       "request": "launch",
+  //       "module": "${relativeFileDirname:website_identifier_2}.${fileBasenameNoExtension}"
+  //     }
+  //   ],
+  //   "compounds": []
+  // }
+}
