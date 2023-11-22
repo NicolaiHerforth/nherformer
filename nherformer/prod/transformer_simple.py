@@ -8,6 +8,11 @@ from nherformer.prod.utils.helper_funcs import estimate_loss, get_batch, get_tok
 class Head(nn.Module):
     """
     A single head in a multi-headed attention layer.
+
+    A single head of Scaled Dot Product Attention as seen on the left in this image from the paper Attention is All You Need:
+    https://miro.medium.com/v2/resize:fit:640/format:webp/1*LpDpZojgoKTPBBt8wdC4nQ.png
+
+
     """
 
     def __init__(self, model_config: ModelConfig):
@@ -72,6 +77,9 @@ class Head(nn.Module):
 class MultiHeadAttention(nn.Module):
     """
     Multi-headed attention layer with multiple heads in parallel.
+
+    A layer of Multi-Headed Scaled Dot Product Attention as seen on the right in this image from the paper Attention is All You Need:
+    https://miro.medium.com/v2/resize:fit:640/format:webp/1*LpDpZojgoKTPBBt8wdC4nQ.png
     """
 
     def __init__(self, model_config: ModelConfig):
@@ -155,6 +163,8 @@ class FeedForward(nn.Module):
 class Block(nn.Module):
     """
     A transformer block: Communication followed by computation.
+
+    This is an encoder block, and NOT a decoder block.
     """
 
     def __init__(self, model_config: ModelConfig):
